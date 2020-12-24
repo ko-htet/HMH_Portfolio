@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div class="left">
+            <h1>Myanmar Tax</h1>
+            <h1>Calculator</h1>
+            <img src="myanmar_logo.png" alt="Myanmar" title="Myanmar">
+            <ul>
+                <li>Calculator</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div id="mpage">
+                <h1>Calculator</h1>
+                <label for="m_sly">Monthly Salary (MMK)</label><br>
+                <input type="number" name="m_sly" id="m_sly" placeholder="Enter monthly salary"><br>
+                <label for="month">Number of Months</label><br>
+                <input type="number" name="month" id="month" value="12" readonly><br>
+                <label>Marital Status</label><br>
+                <input type="radio" name="maritalstatus" id="mar"><label for="mar"> Married &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="radio" name="maritalstatus" id="sin"><label for="sin"> Single &nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                
+                <div id="married" hidden>
+                    <label>Family members staying together</label><br>
+                    <input type="checkbox" name="parent" id="father"><label for="father"> Father &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="checkbox" name="parent" id="mother"><label for="mother"> Mother &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="checkbox" name="spouse" id="spouse" value="1000000"><label for="spouse"> Spouse</label><br>
+                    <label for="children">Number of children</label>
+                    <input type="number" name="children" id="children" placeholder="Enter number of children">
+                </div>
+                <div id="single" hidden>
+                    <label>Family members staying together</label><br>
+                    <input type="checkbox" name="parent" id="father"><label for="father"> Father &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="checkbox" name="parent" id="mother"><label for="mother"> Mother</label><br>
+                </div>
+                    
+                <label for="ded">Other deductibles (Social Security Contributions, etc) in MMK</label><br>
+                <input type="number" name="ded" id="ded" placeholder="Enter Other deductibles (if any)"><br>
+                <button type="submit" id="btn" onclick="cal()">Calculate</button>
+            </div>
+            <div id="cpage" hidden>
+                <h1>Result</h1>
+                <table id="r_table">
+                    <tr>
+                        <td>Monthly Salary</td>
+                        <td class="r_list" id="s_month">1,000,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Annual Salary</td>
+                        <td class="r_list" id="s_year">12,000,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Income for 12 month(s)</td>
+                        <td class="r_list" id="i_year">12,000,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Personal Relief</td>
+                        <td class="r_list" id="per">-2,400,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Parent Relief</td>
+                        <td class="r_list" id="pr">-2,000,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Spouse Relief</td>
+                        <td class="r_list" id="sr">-1,000,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Child Relief</td>
+                        <td class="r_list" id="cr">-500,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Other deductibles</td>
+                        <td class="r_list" id="od">-23,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Taxable Income</td>
+                        <td class="r_list" id="ti">6,077,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total Tax</td>
+                        <td class="r_list" id="tt"><b>0.00</b></td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Tax</td>
+                        <td class="r_list" id="mt"><b>0.00</b></td>
+                    </tr>
+                </table>
+                <h2>Details</h2>
+                <table id="d_table" cellspacing="0">
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td><b>Rate</b></td>
+                        <td><b>Taxable</b></td>
+                        <td><b>Tax Amount (MMK)</b></td>
+                    </tr>
+                    <tr>
+                        <td>Up to 20 Lakh</td>
+                        <td class="d_list">0%</td>
+                        <td class="d_list" id="zero">2000000.00</td>
+                        <td class="d_list">0.00</td>
+                    </tr>
+                    <tr>
+                        <div id="five">
+                            <td>20 Lakh - 50 Lakh</td>
+                            <td class="d_list">5%</td>
+                            <td class="d_list" id="f">0.00</td>
+                            <td class="d_list" id="fp">0.00</td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div id="ten">
+                            <td>50 Lakh - 100 Lakh</td>
+                            <td class="d_list">10%</td>
+                            <td class="d_list" id="t">0.00</td>
+                            <td class="d_list" id="tp">0.00</td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="d_list" id="res"><b>0.00</b></td>
+                    </tr>
+                </table>
+                <button type="submit" id="btn" onclick="ok()">Edit</button>
+            </div>
+        </div>
+    </div>
+    <script src="jscript.js"></script>
+</body>
+</html>

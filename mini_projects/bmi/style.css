@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #0a0022;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+#tit, #fans{
+    text-align: center;
+    margin-top: 65px;
+}
+#tit span:nth-child(1){color: skyblue;}
+#tit span:nth-child(2){color: green;}
+#tit span:nth-child(3){color: red;}
+#tit span:nth-child(4){color: orange;}
+#bmi_form{
+    position: absolute;
+    top: 17%;
+    left: 38%;
+    transform: translate(-5%, 5%);
+    box-shadow: 0 0px 50px #000075;
+    overflow: hidden;
+}
+#bmi_form span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #9e9e9e, #0000ff);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
+}
+#bmi_form span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #9e9e9e, #0000ff);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate2{
+    0%
+    {
+        transform: translateY(-100%);
+    }
+    100%
+    {
+        transform: translateY(100%);
+    }
+}
+#bmi_form span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #9e9e9e, #0000ff);
+    animation: animate3 2s linear infinite;
+}
+@keyframes animate3{
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(-100%);
+    }
+}
+#bmi_form span:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #9e9e9e, #0000ff);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate4{
+    0%
+    {
+        transform: translateY(100%);
+    }
+    100%
+    {
+        transform: translateY(-100%);
+    }
+}
+#bmi_form table{
+    width: 350px;
+    height: 400px;
+    background-color: #10004b;
+}
+#bmi_form input{
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid rgb(163, 160, 160);
+    padding: 5px;
+    margin-left: 15px;
+}
+#bmi_form .lb{
+    text-align: right;
+    padding-right: 15px;
+    font-weight: bold;
+}
+#bmi_form #btn{
+    padding: 10px;
+    margin-left: 120px;
+    border: 0px solid black;
+    background: linear-gradient(#4141b4, #3b3b3b);
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #2e2794;
+}
+#bmi_form #btn:hover{
+    background: linear-gradient(#3b3b3b, #4141b4);
+    box-shadow: 0px 0px 15px #2e2794;
+    cursor: pointer;
+}

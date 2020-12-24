@@ -93,6 +93,7 @@
                                     if($user_id == 1){
                                         ?>
                                         <a href="addpro.php" class="btn btn-dark text-left p-0"><li class="list-group-item bg-dark">Add Project</li></a>
+                                        <a href="user.php" class="btn btn-dark text-left p-0"><li class="list-group-item bg-dark">User</li></a>
                                         <?php
                                     }
                                 }

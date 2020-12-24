@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&R</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cont">
+        <div id="reg_form">
+            <div class="form sign-in">
+                <h2>Re<span>gi</span>ster <span>Fo</span>rm</h2>
+                <label class="u_in">
+                    <span>Name</span>
+                    <input class="u_input" type="name" id="name"/>
+                    <span class="name_err"></span>
+                </label>
+                <label class="u_in">
+                    <span>Email Address</span>
+                    <input class="u_input" type="email" id="email"/>
+                    <span class="email_err"></span>
+                </label>
+                <label class="u_in">
+                    <span>Age</span>
+                    <input class="u_input" type="number" id="age"/>
+                </label>
+                <label class="u_in">
+                    <span>Address</span>
+                    <input class="u_input" type="text" id="address"/>
+                </label>
+                <label class="u_in">
+                    <span>Gender: </span>
+                    <input type="radio" name="gender" id="male" value="male"><label for="male"> Male </label>
+                    <input type="radio" name="gender" id="female" value="female"><label for="female"> Female</label>
+                </label>
+                <button class="register" type="button">Register</button>
+            </div>
+        </div>
+        <div id="ed_form">
+            <div class="form sign-in">
+                <h2><span>Ed</span>it F<span>or</span>m</h2>
+                <label class="u_in">
+                    <input type="hidden" id="uid"/>
+                </label>
+                <label class="u_in">
+                    <span>Name</span>
+                    <input class="u_input" type="name" id="uname"/>
+                </label>
+                <label class="u_in">
+                    <span>Email Address</span>
+                    <input class="u_input" type="email" id="uemail"/>
+                </label>
+                <label class="u_in">
+                    <span>Age</span>
+                    <input class="u_input" type="number" id="uage"/>
+                </label>
+                <label class="u_in">
+                    <span>Address</span>
+                    <input class="u_input" type="text" id="uaddress"/>
+                </label>
+                <label class="u_in">
+                    <span>Gender: </span>
+                    <input type="radio" name="gender" id="umale" value="male"><label for="male"> Male </label>
+                    <input type="radio" name="gender" id="ufemale" value="female"><label for="female"> Female</label>
+                </label>
+                <button class="update" type="button">Update</button>
+            </div>
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>New here?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro quos quas nam voluptates, maxime minus deserunt cum, numquam iusto, doloribus nihil officia harum dolorem illum reprehenderit non ea voluptatibus!</p>
+                </div>
+                <div class="img-text m-in">
+                    <h2>One of us?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro quos quas nam voluptates, maxime minus deserunt cum, numquam iusto, doloribus nihil officia harum dolorem illum reprehenderit non ea voluptatibus!</p>
+                </div>
+                <div class="img-btn">
+                    <span class="m-up">Go</span>
+                    <span class="m-in">Back</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>U<span>se</span>r In<span>forma</span>tion</h2>
+                <table id="user_table" cellspacing="0">
+                    <thead>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody id="u_info">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jscript.js"></script>
+</body>
+</html>

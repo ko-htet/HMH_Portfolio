@@ -8,6 +8,22 @@
             }
             return $data;
         }
+        public static function pro($slug){
+            $data = DB::table('projects')->where('category', 'project')->orderBy('id', 'DESC')->paginate(3, "project=$slug");
+            foreach($data['data'] as $k => $v){
+                $data['data'][$k]->like_count = DB::table('project_likes')->where('project_id', $v->id)->count();
+                $data['data'][$k]->comment_count = DB::table('project_comments')->where('project_id', $v->id)->count();
+            }
+            return $data;
+        }
+        public static function minipro($slug){
+            $data = DB::table('projects')->where('category', 'mini_project')->orderBy('id', 'DESC')->paginate(3, "mini_project=$slug");
+            foreach($data['data'] as $k => $v){
+                $data['data'][$k]->like_count = DB::table('project_likes')->where('project_id', $v->id)->count();
+                $data['data'][$k]->comment_count = DB::table('project_comments')->where('project_id', $v->id)->count();
+            }
+            return $data;
+        }
         public static function detail($slug){
             $data = DB::table('projects')->where('slug', $slug)->getOne();
             $data->like_count = DB::table('project_likes')->where('project_id', $data->id)->count();
@@ -49,6 +65,7 @@
             if(move_uploaded_file($tmp_name, $path)){
                 $project = DB::create('projects', [
                     'title' => $req['title'],
+                    'category' => $req['category'],
                     'language' => $req['language'],
                     'slug' => Helper::slug($req['title']),
                     'codeurl' => $req['codeurl'],

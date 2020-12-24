@@ -70,5 +70,9 @@
                 }
             }
         }
+        public static function alluser(){
+            $data = DB::table('users')->orderBy('name', 'DESC')->get();
+            return $data;
+        }
     }
 ?>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tit"><h1>Calculate <span>B</span><span>M</span><span>I</span><span>!</span></h1></div>
+    <div id="fans"></div>
+    <div id="bmi_form">
+        <span></span><span></span><span></span><span></span>
+        <form name="bmi">
+            <table>
+                <tr>
+                    <td class="lb"><label>Your Height: </label></td>
+                    <td><input type="number" name="ft" id="ft"/><label for="ft"> (feet)</label></td>
+                </tr>
+                <tr>
+                    <td></th>
+                    <td><input type="number" name="inch" id="inch"><label for="inch"> (inches)</label></td>
+                </tr>
+                <tr>
+                    <td class="lb"><label for="lbs">Your Weight: </label></td>
+                    <td><input type="number" name="lbs" id="lbs"><label for="lbs"> (lbs)</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" id="btn" onclick="cal()">Compute BMI</button></td>
+                </tr>
+                <tr>
+                    <td class="lb"><label for="result">Your BMI: </label></td>
+                    <td colspan="2"><input type="number" name="result" id="result" readonly></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="jscript.js"></script>
+</body>
+</html>

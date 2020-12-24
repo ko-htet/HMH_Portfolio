@@ -112,7 +112,7 @@
             $db->query();
             return $db;
         }
-        public function paginate($record_per_page){
+        public function paginate($record_per_page, $append=""){
             if(isset($_GET['page'])){
                 $page_no = $_GET['page'];
             }
@@ -127,8 +127,8 @@
             self::$data = self::$res->fetchall(PDO::FETCH_OBJ);
             $pre_no = $page_no - 1;
             $next_no = $page_no + 1;
-            $pre_page = "?page=$pre_no";
-            $next_page = "?page=$next_no";
+            $pre_page = "?page=$pre_no&$append";
+            $next_page = "?page=$next_no&$append";
             $data = [
                 'data' => self::$data,
                 'total_projects' => $total,

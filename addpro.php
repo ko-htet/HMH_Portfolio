@@ -29,6 +29,12 @@
         ?>
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control c_input mb-3">
+            <label for="cat">Category</label>
+            <select name="category" id="cat" class="form-control c_input mb-3">
+                <option selected>Choose Category</option>
+                <option value="project">Project</option>
+                <option value="mini_project">Mini Project</option>
+            </select>
             <label for="language">Language</label>
             <input type="text" id="language" name="language" class="form-control c_input mb-3">
             <label for="codeurl">Code URL</label>
